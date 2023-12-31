@@ -1,0 +1,30 @@
+<!-- editar-filme.html -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Editar Filme</title>
+</head>
+<body>
+    <header th:insert="~{navbar.html :: nav}"></header>
+    <h1>Editar Filme</h1>
+    <form th:action="@{'/editar-filme/' + ${filme.id}}" method="post">
+        <div>
+            <!-- Campo para editar o título do filme -->
+            <p>Título: <input type="text" th:field="*{filme.titulo}" /></p>
+
+            <!-- Campo para editar o gênero do filme -->
+            <p>Gênero: <input type="text" th:field="*{filme.genero}" /></p>
+
+            <!-- Campo para editar a sinopse do filme -->
+            <p>Sinopse: <textarea th:field="*{filme.sinopse}"></textarea></p>
+
+            <!-- Campo para editar o ano de lançamento do filme -->
+            <p>Ano de Lançamento: <input type="number" th:field="*{filme.anoLancamento}" /></p>
+        </div>
+        <button type="submit">Salvar</button>
+    </form>
+</body>
+</html>

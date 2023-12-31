@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Adicionar Análise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/styles.css"/>
+</head>
+<body>
+    <div class="container">
+        <h2>Adicionar Análise para <span th:text="${filme.titulo}"></span></h2>
+        <form th:action="@{'/filmes/' + ${filme.id} + '/adicionar-analise'}" th:object="${analise}" method="post">
+            <label>Análise: <textarea th:field="*{analise}"></textarea></label><br />
+            <label>Nota: <input type="text" th:field="*{nota}" /></label><br />
+            
+            <input type="submit" value="Adicionar Análise" />
+            <a th:href="@{'/filmes/' + ${filme.id}}" class="button">Detalhes do Filme</a>
+            
+        </form>
+        
+    </div>
+</body>
+</html>

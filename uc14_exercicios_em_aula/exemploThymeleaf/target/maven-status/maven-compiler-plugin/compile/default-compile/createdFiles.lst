@@ -1,0 +1,3 @@
+com\senac\exemplothymeleaf\ExemplothymeleafApplication.class
+com\senac\exemplothymeleaf\controller\TarefaController.class
+com\senac\exemplothymeleaf\model\Tarefa.class

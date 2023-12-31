@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Filmes e Análises</title>
+            <link th:href="@{'/css/' + ${css} + '.css'}" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+       <header th:insert="~{navbar.html :: nav}"></header>
+    <h1>Lista de Filmes e Análises</h1>
+    
+    <form action="#" method="get">
+        <label for="nota">Pesquisar por Nota:</label>
+        <input type="number" id="nota" name="nota" min="0" max="10" step="0.1" />
+        <button type="submit">Pesquisar</button>
+    </form>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Gênero</th>
+                <th>Sinopse</th>
+                <th>Ano de Lançamento</th>
+                <th>Análise</th>
+                <th>Nota</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="filme : ${filmes}">
+                <td th:text="${filme.titulo}"></td>
+                <td th:text="${filme.genero}"></td>
+                <td th:text="${filme.sinopse}"></td>
+                <td th:text="${filme.anoLancamento}"></td>
+                <td th:if="${filme.analises != null}">
+                    <span th:each="analise : ${filme.analises}">
+                        <p th:text="${analise.analise}"></p>
+                    </span>
+                </td>
+                <td th:if="${filme.analises != null}">
+                    <span th:each="analise : ${filme.analises}">
+                        <p th:text="${analise.nota}"></p>
+                    </span>
+                </td>
+                <td th:unless="${filme.analises != null}">
+                    <p>Sem análises</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+                        <p>O estilo atual da página é <strong th:text="${css}"></strong></p>
+                    <p>Você pode configurar suas preferências de exibição <a href="/preferencias">neste link</a></p>
+</body>
+</html>

@@ -1,0 +1,4 @@
+com\atividade1\cinema\CinemaApplication.class
+com\atividade1\cinema\model\Filme.class
+com\atividade1\cinema\model\Analises.class
+com\atividade1\cinema\controller\FilmeController.class

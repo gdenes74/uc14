@@ -1,0 +1,10 @@
+com\api\cinemoteca\service\AnalisesService.class
+com\api\cinemoteca\data\AnalisesEntity.class
+com\api\cinemoteca\CinemotecaApplication.class
+com\api\cinemoteca\data\CinemotecaEntity.class
+com\api\cinemoteca\controller\FilmotecaController.class
+com\api\cinemoteca\controller\CinemotecaController.class
+com\api\cinemoteca\data\CinemotecaRepository.class
+com\api\cinemoteca\data\AnalisesRepository.class
+com\api\cinemoteca\service\CinemotecaService.class
+com\api\cinemoteca\controller\AnalisesController.class

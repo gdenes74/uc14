@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Detalhes do Filme</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">     
+        <link rel="stylesheet" type="text/css" href="/styles.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Detalhes do Filme</h2>
+            <table>
+                <tr>
+                    <th>Título</th>
+                    <td th:text="${filme.titulo}"></td>
+                </tr>
+                <tr>
+                    <th>Sinopse</th>
+                    <td th:text="${filme.sinopse}"></td>
+                </tr>
+                <tr>
+                    <th>Gênero</th>
+                    <td th:text="${filme.genero}"></td>
+                </tr>
+                <tr>
+                    <th>Ano de Lançamento</th>
+                    <td th:text="${filme.anoLancamento}"></td>
+                </tr>
+            </table>
+
+            <h3>Análises</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Análise</th>
+                        <th>Nota</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="analise : ${filme.analises}">
+                        <td th:text="${analise.analise}"></td>
+                        <td th:text="${analise.nota}"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <a th:href="@{'/filmes/' + ${filme.id} + '/adicionar-analise'}" class="button">Adicionar Análise</a>
+            <a th:href="@{'/filmes'}" class="button">Voltar à Lista</a>
+        </div>
+    </body>
+</html>

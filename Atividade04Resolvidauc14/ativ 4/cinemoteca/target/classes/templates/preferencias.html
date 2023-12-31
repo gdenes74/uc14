@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Site - Preferências</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link th:href="@{'/css/' + ${css} + '.css'}" rel="stylesheet" type="text/css"/>
+                <link th:href="@{'/css/' + ${css} + '.css'}" rel="stylesheet" type="text/css"/>
+
+    </head>
+    <body>
+        <h1>Informe suas preferências para o site</h1>
+        <form th:action="@{/preferencias}" method="POST">           
+            <label for="selEstilo">Seu esquema de cores favorito</label>
+            <select name="estilo" id="selEstilo">
+                <option value="claro">Tema Claro</option>
+                <option value="escuro">Tema Escuro</option>
+            </select>
+            <p><input type="submit" value="OK"/></p>
+        </form>
+                            <p>O estilo atual da página é <strong th:text="${css}"></strong></p>
+                    <p>Você pode configurar suas preferências de exibição <a href="/preferencias">neste link</a></p>
+
+    </body>
+</html>

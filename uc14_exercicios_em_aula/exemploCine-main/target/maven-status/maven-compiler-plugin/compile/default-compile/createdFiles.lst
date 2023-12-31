@@ -1,0 +1,4 @@
+com\senac\cine\controller\FilmeController.class
+com\senac\cine\model\Filme.class
+com\senac\cine\CineApplication.class
+com\senac\cine\model\Analise.class

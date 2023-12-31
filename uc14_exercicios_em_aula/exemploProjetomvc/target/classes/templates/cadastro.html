@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Cadastro de Pessoa</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Cadastro de Pessoa</h1>
+        <form th:action="@{/cadastro}" th:object= "${pessoa}" method="POST">
+            <p>Nome: <input type="text" th:field="*{nome}"/></p>
+            <p>Sobrenome: <input type="text" th:field="*{sobrenome}"/></p>
+            <p>Idade: <input type="text" th:field="*{idade}"/></p>
+            <p><input type="submit" value="Cadastrar" /></p>
+        </form>
+    </body>
+</html>

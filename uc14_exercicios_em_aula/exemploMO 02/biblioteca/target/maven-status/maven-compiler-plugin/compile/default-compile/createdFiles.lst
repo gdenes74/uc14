@@ -1,0 +1,4 @@
+com\senacead\biblioteca\BibliotecaApplication.class
+com\senacead\biblioteca\model\Livro.class
+com\senacead\biblioteca\model\Comentarios.class
+com\senacead\biblioteca\controller\LivroController.class
